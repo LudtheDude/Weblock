@@ -1,0 +1,18 @@
+.body{
+	margin: 120x;
+}
+.buttons{
+	display: flex;
+}
+.button{
+	padding: 5px;
+}
+.history{
+	padding: 5px;
+}
+.headings{
+	display: flex;
+}
+.websites{
+	padding-right: 100px;
+}

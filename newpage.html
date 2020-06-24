@@ -3,8 +3,42 @@
 <head>
 	<meta charset = "UTF-8">
 	<title> Document </title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
 	<script src="newpage.js" charset="UTF-8"></script>
+	<h1>Weblock</h1>
+
+	<div class="headings">
+		<div class="websites">
+			<h2>Enter the websites to block</h2>
+		</div>
+
+		<div class="websites">
+			<h2>Your List of Websites to Block:</h2>
+		</div>
+	</div>
+
+	<p>
+		<input type="url" id="websites-to-block" size="35" placeholder="https://example.com"></input>
+	</p>
+	<div class="buttons">
+		<div class="button">
+			<button id="add-website" onclick="addWebsite()">Add</button>
+		</div>
+		<div class="button">
+			<button id="submit">Submit</button>
+		</div>
+	</div>
+	<script>
+		function addWebsite() {
+				
+		}
+	</script>
+	<p>
+		<button id="history">See history</button>
+	</p>
+	
 </body>
 </html>
