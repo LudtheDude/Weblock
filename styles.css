@@ -1,31 +1,45 @@
-.body title{
+/*body .title{
     font-family: 'Playfair Display', serif;
-}
-.body .headings .websites .button .content {
+}*/
+/*body .headings .websites .button .content {
 	font-family: "Lato", sans-serif;
-}
-.body{
+}*/
+
+body { 
 	margin: 10px;
 }
-.buttons{
+
+.contents {
 	display: flex;
 }
-.button{
+
+.heading {
 	padding-right: 150px;
-	padding-bottom: 10px;
 }
-.history{
-	padding: 5px;
-}
-.headings{
+
+.buttons {
 	display: flex;
 }
-.websites{
-	padding-right: 200px;
+
+.left-buttons {
+	padding-top: 8px;
+	padding-right: 100px;
 }
-.contents{
-	display:flex;
+
+.right-buttons {
+	padding-top: 8px;
 }
-.content{
-	padding-right:180px;
+
+.history {
+	padding-top: 8px;
 }
+
+/*.button{
+	padding-right: 60px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}*/
+
+/*.see-history{
+	padding: 5px;
+}*/

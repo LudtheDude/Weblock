@@ -8,42 +8,57 @@
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <script src="newpage.js"></script>
+
 <body>
 	<script src="newpage.js" charset="UTF-8"></script>
-	<h1 id="title">Weblock</h1>
 
-	<div class="headings">
-		<div class="websites">
-			<h2>Enter the websites to block</h2>
-		</div>
+	<div id="title">
+		<h1>Weblock</h1>
+    </div>
 
-		<div class="websites">
-			<h2>Your List of Websites to Block:</h2>
-		</div>
-	</div>
+    <div class="contents">
+        <div class="user-input">
 
-	<div class="contents">
-		<div class="content">
-			<input type="url" id="websites-to-block" size="35" placeholder="https://example.com"></input>
-		</div>
-		<div class="list">
-			<ol id = "printedList">
-			</ol>
-		</div>
+            <div class="heading">
+                <h2>Enter the websites to block</h2>
+            </div>
 
-	</div>
-	<div class="buttons">
-		<div class="button">
-			<button id="add-website">Add</button>
-		</div>
-		<script src="newpageButtons.js"></script>
-		<div class="button">
-			<button id="submit">Submit</button>
-		</div>
-	</div>
-	<div>
-		<button id="history">See history</button>
-	</div>
-	
+            <div class="input">
+				<input type="url" id="websites-to-block" size="35" placeholder="https://example.com"></input>
+            </div>
+
+            <div class="buttons">
+                <div class="left-buttons">
+                    <div class="website-control">
+                        <button id="add-website">Add</button>
+                    </div>
+                    <script src="newpageButtons.js"></script>
+                    <div class="history">
+                        <button id="see-history">See history</button>
+                    </div>
+                </div>
+                <div class="right-buttons">
+                    <div class="website-control">
+                        <button id="submit">Submit</button>
+                    </div>
+                </div>
+			</div>
+            
+        </div>
+
+        <div class="website-list">
+
+            <div class="heading">
+                <h2>Your List of Websites to Block:</h2>
+            </div>
+
+            <div class="content">
+				<ol id = "printedList">
+				</ol>
+			</div>
+
+        </div>
+    </div>
+
 </body>
 </html>
