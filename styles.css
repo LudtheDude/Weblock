@@ -1,11 +1,18 @@
+.body title{
+    font-family: 'Playfair Display', serif;
+}
+.body .headings .websites .button .content {
+	font-family: "Lato", sans-serif;
+}
 .body{
-	margin: 120x;
+	margin: 10px;
 }
 .buttons{
 	display: flex;
 }
 .button{
-	padding: 5px;
+	padding-right: 150px;
+	padding-bottom: 10px;
 }
 .history{
 	padding: 5px;
@@ -14,5 +21,11 @@
 	display: flex;
 }
 .websites{
-	padding-right: 100px;
+	padding-right: 200px;
+}
+.contents{
+	display:flex;
+}
+.content{
+	padding-right:180px;
 }

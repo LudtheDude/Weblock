@@ -4,11 +4,13 @@
 	<meta charset = "UTF-8">
 	<title> Document </title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
-
+<script src="newpage.js"></script>
 <body>
 	<script src="newpage.js" charset="UTF-8"></script>
-	<h1>Weblock</h1>
+	<h1 id="title">Weblock</h1>
 
 	<div class="headings">
 		<div class="websites">
@@ -20,25 +22,29 @@
 		</div>
 	</div>
 
-	<p>
-		<input type="url" id="websites-to-block" size="35" placeholder="https://example.com"></input>
-	</p>
+	<div class="contents">
+		<div class="content">
+			<input type="url" id="websites-to-block" size="35" placeholder="https://example.com"></input>
+		</div>
+		<div class="list">
+			<ol>
+				<li>asdhfakjshfd</li>
+			</ol>
+		</div>
+
+	</div>
 	<div class="buttons">
 		<div class="button">
-			<button id="add-website" onclick="addWebsite()">Add</button>
+			<button id="add-website">Add</button>
 		</div>
+		<script src="newpageButtons.js"></script>
 		<div class="button">
 			<button id="submit">Submit</button>
 		</div>
 	</div>
-	<script>
-		function addWebsite() {
-				
-		}
-	</script>
-	<p>
+	<div>
 		<button id="history">See history</button>
-	</p>
+	</div>
 	
 </body>
 </html>
