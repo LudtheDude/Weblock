@@ -14,15 +14,18 @@ window.blocked = [];
 
 document.getElementById('add-website').onclick = function(){
 	window.addedSite = document.getElementById("websites-to-block").value
-	window.blocked.push(window.addedSite)
-	chrome.runtime.sendMessage({
+	if(window.addedSite){ //executes if input is not empty
+		window.blocked.push(window.addedSite)
+		var length = window.blocked.length
+		const div = document.createElement('div')
+		if(window.addedSite){
+			div.textContent = length + ". " + addedSite
+		}
+		document.getElementById("printedList").appendChild(div)
+	}
+	/*chrome.runtime.sendMessage({
   		added: addedSite
-	})
-	var length = window.blocked.length
-	const div = document.createElement('div')
-	div.textContent = length + ". " + addedSite
-	document.getElementById("printedList").appendChild(div)
-
+	})*/
 	document.getElementById("websites-to-block").value = "";
 	window.addedSite = "";
 }
