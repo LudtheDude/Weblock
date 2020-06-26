@@ -5,20 +5,12 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
 
 chrome.browserAction.onClicked.addListener(function(tab){
 	chrome.tabs.create({url: 'newpage.html'})
+
+
+	/*chrome.tabs.query({}, function(tabs) {
+		var message = {addSite: "initial", greeting: "from background.js"};
+		for (var i=0; i<tabs.length; i++) {
+	        chrome.tabs.sendMessage(tabs[i].id, message);
+		}
+	});*/
 })
-
-
-
-
-//BLOCKS ENTIRE WEBSITE
-/*function blockRequest(details) {
-   return {cancel: true};
-}
-
-function updateFilters(urls) {
-   if(chrome.webRequest.onBeforeRequest.hasListener(blockRequest))
-     chrome.webRequest.onBeforeRequest.removeListener(blockRequest);
-   chrome.webRequest.onBeforeRequest.addListener(blockRequest, {urls: ["*://*.facebook.com/*", "*://*.facebook.net/*"]}, ['blocking']);
-}
-
-updateFilters();*/
