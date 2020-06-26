@@ -8,8 +8,14 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from googlesearch import search 
+from urlextract import URLExtract
 
 while True:
+
+
+	# TAKE URLS FROM BLOCKED LIST
+
+	search_urls = URLExtract().find_urls(*JAVA FILE*)
 
 	# EXTRACT TEXT FILE FROM HTML OF WEBSITE
 
@@ -26,41 +32,43 @@ while True:
 	    visible_texts = filter(tag_visible, texts)  
 	    return u" ".join(t.strip() for t in visible_texts)
 
-	html = urllib.request.urlopen(url).read()
-	full_text = text_from_html(html)
-
-
-	# CLEAN UP THE TEXT FILE 
-
-	tokens = word_tokenize(full_text)
-
-	tokens = [w.lower() for w in tokens]
-
-	table = str.maketrans('', '', string.punctuation)
-	stripped = [w.translate(table) for w in tokens]
-
-	words = [word for word in stripped if word.isalpha()]
-
-	stop_words = set(stopwords.words('english'))
-	words = [w for w in words if not w in stop_words]
-
-	porter = PorterStemmer()
-	stemmed_text = [porter.stem(word) for word in tokens]
-
-
-	# SORT THE WORDS BY FREQUENCY
-
-	single_text = sorted(set(stemmed_text))
-	for x in single_text:
-	    freq_list = stemmed_text.count(x), x
-
-
-	# SEARCH THE WEB FOR NEW WEBSITES USING FREQUENT KEYWORDS
-	
 	i = 0
+	for i in (2):
+		html = urllib.request.urlopen(search_urls[i]).read()
+		full_text = text_from_html(html)
+		i++
 
-	while i < 3:
-		query = freq_list[i]
-		for url in search(query, tld="co.in", num=1, stop=1, pause=2): 
-	    	print(url)
-	    i ++
+		# CLEAN UP THE TEXT FILE 
+
+		tokens = word_tokenize(full_text)
+
+		tokens = [w.lower() for w in tokens]
+
+		table = str.maketrans('', '', string.punctuation)
+		stripped = [w.translate(table) for w in tokens]
+
+		words = [word for word in stripped if word.isalpha()]
+
+		stop_words = set(stopwords.words('english'))
+		words = [w for w in words if not w in stop_words]
+
+		porter = PorterStemmer()
+		stemmed_text = [porter.stem(word) for word in tokens]
+
+
+		# SORT THE WORDS BY FREQUENCY
+
+		single_text = sorted(set(stemmed_text))
+		for x in single_text:
+		    freq_list = stemmed_text.count(x), x
+
+
+		# SEARCH THE WEB FOR NEW WEBSITES USING FREQUENT KEYWORDS
+
+		j = 0
+
+		while j < 3:
+			query = freq_list[i]
+			for url in search(query, tld="co.in", num=1, stop=1, pause=2): 
+		    	print(url) # APPEND THIS TO LIST IN JAVA
+		    j++
