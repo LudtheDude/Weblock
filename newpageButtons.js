@@ -14,18 +14,22 @@ window.blocked = [];
 
 document.getElementById('add-website').onclick = function(){
 	window.addedSite = document.getElementById("websites-to-block").value
-	if(window.addedSite){ //executes if input is not empty
+
+	if(addedSite){
 		window.blocked.push(window.addedSite)
-		var length = window.blocked.length
+		alert(window.blocked.toString())
 		const div = document.createElement('div')
-		if(window.addedSite){
-			div.textContent = length + ". " + addedSite
-		}
+		div.textContent = blocked.length + ". " + addedSite
 		document.getElementById("printedList").appendChild(div)
+
+		chrome.tabs.query({}, function(tabs) {
+		    var message = {addSite: window.addedSite, greeting: "from button.js"};
+		    for (var i=0; i<tabs.length; i++) {
+		        chrome.tabs.sendMessage(tabs[i].id, message);
+		    }
+		});
 	}
-	/*chrome.runtime.sendMessage({
-  		added: addedSite
-	})*/
+
 	document.getElementById("websites-to-block").value = "";
-	window.addedSite = "";
+	addedSite = "";
 }
