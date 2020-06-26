@@ -63,4 +63,4 @@ while True:
 		query = freq_list[i]
 		for url in search(query, tld="co.in", num=1, stop=1, pause=2): 
 	    	print(url)
-	    i = i + 1
+	    i ++
