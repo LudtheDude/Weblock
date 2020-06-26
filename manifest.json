@@ -1,32 +1,33 @@
 {
-	"name": "Weblock",
+    "name": "Weblock",
     "version": "1.0",
     "manifest_version": 2,
 
-	"description": "System that blocks websites using a ML algorithm. Simply enter the websites to block and weblock will block all websites similar to those specified. Intended for parental control.",
+    "description": "System that blocks websites using a ML algorithm.",
 
     "browser_action":{
-    	"default_icon": "stopsign.png"
+        "default_icon": "stopsign.png"
     },
 
     "icons": {
-    	"128": "stopsign.png"
+        "128": "stopsign copy.png"
     },
 
     "content_scripts": [{
-    	"matches": ["<all_urls>"],
-    	"js" : ["content.js"]
+        "matches": ["<all_urls>"],
+        "js" : ["content.js"]
     }],
 
     "background": {
-    	"scripts": ["background.js"]
+        "scripts": ["background.js"]
     },
 
     "permissions": ["tabs",
-    				"<all_urls>",
-    				"webRequest",
-    				"webRequestBlocking",
-    				"activeTab",
-    				"management",
-    				"webNavigation"]
+                    "<all_urls>",
+                    "webRequest",
+                    "webRequestBlocking",
+                    "activeTab",
+                    "management",
+                    "webNavigation",
+                    "storage"]
 }
