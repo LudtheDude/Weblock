@@ -1,23 +1,31 @@
 //BLOCK THE ENTIRE DOMAIN 
-window.blockedUrls = [];
+console.log('Content script running.');
+window.blocked = [];
 chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
-  window.blockedUrls.push(request.added)
-})
+    window.blocked.push(request.addSite)
+    console.log(sender.tab ?
+                "from a content script:" + sender.tab.url :
+                "from the extension");
+    console.log(request.greeting)
+    console.log(request.addSite)
+    BlockAllURL(window.blocked);
+});
+
 BlockAllURL = function changeAllURL(text){
   var current = window.location.href;
   for(var i = 0;i<text.length;i++){
     if(current.includes(text[i])){
+      document.documentElement.innerHTML = '';
       document.documentElement.innerHTML = 'The page you are trying to access has been blocked';
+      document.documentElement.scrollTop = 0;
     }
   }
 }
-BlockAllURL(window.blockedUrls);
-
+BlockAllURL(window.blocked);
 
 chrome.runtime.sendMessage({
   url: window.location.href
 })
-
 
 
 
@@ -38,7 +46,6 @@ BlockURL = function changeURL(text){
     window.location.replace("https://www.google.co.in");
   }
 }
-
 
 
 
