@@ -61,5 +61,5 @@ while *ADD ACTIONABLE EVENT THAT BEGINS THIS SEQUENCE*:
 		while j < 3:
 			query = freq_list[i]
 			for url in search(query, tld="co.in", num=1, stop=1, pause=2): 
-				blocked.add(url)
+				return(url)
 				j++
