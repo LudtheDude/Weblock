@@ -1,5 +1,3 @@
-# ADD ACTIONABLE EVENT THAT BEGINS THIS SEQUENCE
-
 from bs4 import BeautifulSoup
 from bs4.element import Comment
 import urllib.request
@@ -10,9 +8,7 @@ from nltk.stem.porter import PorterStemmer
 from googlesearch import search 
 from urlextract import URLExtract
 
-while True:
-
-
+while *ADD ACTIONABLE EVENT THAT BEGINS THIS SEQUENCE*:
 	# TAKE URLS FROM BLOCKED LIST
 	search_urls = URLExtract().find_urls(content.js)
 
